@@ -14,9 +14,9 @@ setTimeout(() => { // Au lancemenent de la page on lance l'animation pour voir l
 
 
 transitionBlack.addEventListener("transitionend", (e) => { // Quand l'animation se termine et qu'on a cliqué sur un lien qui change de page, on se dirige vers une nouvelle page
+    console.log(1);
     if (transition && window.location.pathname.endsWith('index.html') && !logoBurgerBool) {
         window.location.href = 'choix.html';
-        console.log(1);
     } else if (transition && window.location.pathname.endsWith('choix.html') && normal == true && !logoBurgerBool) {
         window.location.href = 'n-sections.html';
     } else if (transition && window.location.pathname.endsWith('choix.html') && !logoBurgerBool) {
@@ -42,4 +42,5 @@ function transitionToChangePage() {
     transitionBlack.classList.remove("top-minus-50");
     transition = true; 
 }
+
 
