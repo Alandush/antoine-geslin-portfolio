@@ -1,0 +1,460 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Handlee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+:root {
+  --bleu-principal: #0d1822;
+  --bleu-secondaire: rgb(20, 38, 72);
+  --noir-nuance: #111111;
+  --blanc-nuance: #F2F2F2;
+  --beige-principal: #E5CFBC;
+}
+
+/* FONT */
+.divertissement-font {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.normal-font {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Général */
+* {
+  cursor: none;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+
+main {
+  background-color: var(--bleu-principal);
+  height: 100vh;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, p {
+  z-index: 2;
+  color: white;
+}
+
+.center-absolute {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.relative {
+  position: relative;
+}
+
+.audio {
+  display: none;
+}
+
+/* Curseur */
+.circle {
+  z-index: 10;
+  pointer-events: none;
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background-color: var(--beige-principal);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: background-color ease-out 200ms, transform ease-out 200ms;
+  opacity: 0;
+}
+
+.circle-blend {
+  mix-blend-mode: difference;
+}
+
+/* Progressing Bar */
+.progressing-bar {
+  height: 20%;
+  width: 20%;
+  border-radius: 1rem;
+  background-color: var(--blanc-nuance);
+  overflow: hidden;
+  transition: all ease-in-out 2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.progressing-bar-content {
+  background-color: var(--bleu-secondaire);
+  border-color: var(--bleu-secondaire);
+  border-style: solid;
+  border-radius: 1rem;
+  height: 100%;
+  width: 0%;
+  transition: width ease-in-out 1.25s, opacity ease-in-out 500ms;
+  opacity: 0;
+  display: flex;
+  justify-content: left;
+}
+
+.progressing-bar-text {
+  mix-blend-mode: difference;
+}
+
+.progressing-bar-full {
+  opacity: 1;
+  width: 100%;
+}
+
+/* Transition */
+.black-transition {
+  position: fixed;
+  z-index: 100;
+  background-color: var(--noir-nuance);
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  height: 100dvh;
+  width: 100dvw;
+  transition: top 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Index */
+.titre-index {
+  height: 20vh;
+}
+
+.titre-index h1 {
+  justify-content: center;
+  height: 100%;
+  align-items: end;
+  text-align: center;
+  display: flex;
+  padding: 10px;
+  padding-top: 30px;
+}
+
+.index-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30%;
+}
+
+.explanation-divertissement {
+  top: 50%;
+  left: 75%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  max-width: 25vw;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out, left 50ms ease-in;
+}
+
+.explanation-divertissement h3 {
+  color: rgb(184, 184, 184);
+  text-decoration: underline;
+  padding-top: 0.5rem;
+}
+
+/* Divertissement */
+/* Bulles */
+.bubble-section {
+  height: 50dvh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.bubble-section span {
+  position: absolute;
+  bottom: -50px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+  transition: all ease-out 0.5s;
+}
+
+.bubble-section span::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.25) translate(-70%, -70%);
+  background: radial-gradient(#fff, transparent);
+  border-radius: 50%;
+  transition: all ease-out 0.5s;
+}
+
+.bubble-instruction {
+  height: 50dvh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+.bubble-instruction h2 {
+  margin-bottom: 5rem;
+  font-size: 2rem;
+}
+
+.bubble-instruction h3 {
+  font-size: 5rem;
+}
+
+.bubble-animation {
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  99% {
+    transform: translateY(-1200%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1200%);
+    opacity: 0;
+  }
+}
+/* Panel section */
+.panel-section {
+  height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  overflow: hidden;
+  flex-wrap: nowrap;
+}
+
+.panel-section h1 {
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.panel-video {
+  background-color: var(--beige-principal);
+}
+
+.panel-video h1 {
+  color: var(--bleu-principal);
+  font-weight: bold;
+}
+
+/* MOUSE GAME */
+.mouse-texte {
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 20px;
+}
+.mouse-texte h1 {
+  font-size: 2rem;
+}
+
+.mouse-circle-container {
+  overflow: hidden;
+}
+
+.mouse-circle {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: var(--blanc-nuance);
+  position: absolute;
+  transition: all ease-in-out 1000ms;
+  z-index: 2;
+}
+
+.mouse-circle-goal {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--noir-nuance);
+  position: absolute;
+  z-index: 1;
+}
+
+.mouse-circle-goal-null {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--noir-nuance);
+  position: absolute;
+  z-index: 3;
+  opacity: 0;
+}
+
+.mouse-circle-goal-blur {
+  height: 170px;
+  width: 170px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  position: absolute;
+  filter: blur(10px);
+  opacity: 0;
+  transition: all ease-in-out 200ms;
+}
+
+/* Memory Game */
+.memory-sect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.memory-sect-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 20dvh;
+}
+.memory-sect-text h1 {
+  padding-top: 50px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.memory-art {
+  margin: 10px;
+}
+
+.memory-div {
+  background-color: var(--noir-nuance);
+  height: 150px;
+  width: 150px;
+  border-radius: 10%;
+  transition: all ease-in 100ms;
+}
+
+/* ClassList JS */
+.opacity-up {
+  opacity: 1;
+}
+
+.opacity-down {
+  opacity: 0;
+}
+
+.background-color-white-opacity-down {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.top-minus-50 {
+  top: -50%;
+}
+
+.top-0 {
+  top: 0% !important;
+}
+
+.left-0 {
+  left: 0% !important;
+}
+
+.animation-hover {
+  animation: hoverActif infinite 1s ease-in-out;
+}
+
+@keyframes hoverActif {
+  0% {
+    transform: scale(5);
+  }
+  50% {
+    transform: scale(7);
+  }
+  100% {
+    transform: scale(5);
+  }
+}
+/* Pour les écrans de tablette */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .circle {
+    display: none;
+  }
+  .progressing-bar {
+    width: 60%;
+  }
+  .explanation-divertissement {
+    max-width: 100%;
+    width: 100%;
+    top: 100%;
+    left: 50%;
+    text-align: center;
+  }
+}
+/* Pour les écrans de téléphone */
+@media (max-width: 767px) {
+  .circle {
+    display: none;
+  }
+  .progressing-bar {
+    width: 80%;
+  }
+  .index-container {
+    height: 30%;
+  }
+  .explanation-divertissement {
+    max-width: 100%;
+    width: 100%;
+    top: 100%;
+    left: 50%;
+    text-align: center;
+  }
+  .memory-div {
+    background-color: var(--noir-nuance);
+    height: 100px;
+    width: 100px;
+  }
+  .memory-sect {
+    align-items: end;
+  }
+  .bubble-instruction h2 {
+    font-size: 1.5rem;
+  }
+  .bubble-instruction h3 {
+    font-size: 2rem;
+  }
+  .mouse-texte h1 {
+    font-size: 1.3rem;
+  }
+}/*# sourceMappingURL=main.css.map */

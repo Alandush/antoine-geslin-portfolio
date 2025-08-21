@@ -1,0 +1,45 @@
+body{
+    height: 100dvh;
+    width: 100dvw;
+    overflow: hidden;
+    background-color: var(--bleu-secondaire);
+
+    section{
+        height: 40dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        text-align: center;
+    }
+
+    .clicker{
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        height: 300px;
+        width: 300px;
+        background-color: var(--bleu-principal);
+        border-radius: 50%;
+        z-index: 3;
+        transition: all ease-in 200ms;
+
+        &:hover{
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        &:hover + .blur{
+            opacity: 0.3;
+            transform: translate(-50%, -50%) scale(1.2);
+
+        }
+    }
+
+    .blur{
+        background-color: var(--blanc-nuance);
+        opacity: 0.1;
+        filter: blur(10px);
+        z-index: 1;
+        transition: all ease-in 200ms;
+    }
+}

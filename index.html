@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antoine Geslin - PORTFOLIO</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/burger.css">
+    <script src="scripts/cursor.js" defer></script>
+    <script src="scripts/interaction.js" defer></script>
+    <script src="scripts/progressingBar.js" defer></script>
+    <script src="scripts/home.js" defer></script>
+    <script src="scripts/burger.js" defer></script>
+</head>
+
+<body class="body-home">
+    <div class="black-transition center-absolute" id="js-black-transition"></div>
+    <main class="home-main">
+        <section class="home">
+            <article>
+                <div class="texte" >
+                    <div><h2 id="js-hover">Développeur</h2></div>
+                    <div><h2 id="js-hover">UI / UX</h2></div>
+                    <p id="js-hover">Je suis Antoine Geslin, un développeur de site web et de logiciel, ayant étudié dans la technique d'Intégration Multimédia au Cégep de Matane. Je suis actuellement en troisième année de ce cursus. Mes compétences personelles touchent aussi à l'audiovisuel et à la gestion de projet.</p>
+                </div>
+                <div class="carte">
+                    <div class="ligne">
+                        <div id="js-container-image-home">
+                            <img src="images/html_bw.png" alt="html" id="js-black-and-white-image">
+                            <img src="images/html.png" alt="html" class="icon-couleur" id="js-image-home-transition">
+                        </div>
+                        <div id="js-container-image-home">
+                            <img src="images/css_bw.png" alt="css" id="js-black-and-white-image">
+                            <img src="images/css.png" alt="css" class="icon-couleur" id="js-image-home-transition">
+                        </div>
+                    </div>
+                    <div class="ligne">
+                        <div id="js-container-image-home">
+                            <img src="images/js_bw.png" alt="js" id="js-black-and-white-image">
+                            <img src="images/js.png" alt="js" class="icon-couleur" id="js-image-home-transition">
+                        </div>
+                        <div id="js-container-image-home">
+                            <img src="images/c_bw.png" alt="c-sharp" id="js-black-and-white-image">
+                            <img src="images/c.png" alt="c-sharp" class="icon-couleur" id="js-image-home-transition">
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <div class="bouton bouton-script" id="js-hover-actif">
+                <div><h3>Accédez au contenu</h3></div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2 id="js-hover">Mes informations</h2>
+
+            <article class="mail">
+                <img src="images/mail.png" alt="mail" id="js-hover">
+                <a href="mailto:geslinantoine0@gmail.com" id="js-hover-actif"><h3>geslinantoine0@gmail.com</h3></a>
+            </article>
+
+            <article class="article-progressing">
+                <div class="progressing-bar" id="js-progressing-bar">
+                    <h2 class="progressing-bar-text divertissement-font">EN SAVOIR PLUS</h1>
+                    <div class="progressing-bar-content" id="js-progressing-bar-content"></div>
+                </div>
+
+                <div class="explanation-divertissement" id="js-hover">
+                    <h2 class="divertissement-font">Maintenez le bouton "En savoir plus" pour pouvoir accéder au contenu</h2>
+                    <h3 id="js-direction-change-index" class="divertissement-font">J'ai compris</h3>
+                </div>
+            </article>
+            
+            <a href="CV.pdf" class="cv" id="js-hover-actif" target="_blank"><h3>CV</h3></a>
+        </section>
+
+        <!-- Menu Burger -->
+        <div id="js-hover-actif">
+            <section class="burger-logo" id="js-burger-logo">
+                <article></article>
+                <article></article>
+                <article></article>
+            </section>
+        </div>
+
+        <section class="burger-container" id="js-burger-container">
+            <article class="un" id="js-burger-animation"><h2 id="js-hover-actif">ACCUEIL</h2></article>
+            <article class="deux" id="js-burger-animation"><h2 id="js-hover-actif">NORMAL</h2></article>
+            <article class="un" id="js-burger-animation"><h2 id="js-hover-actif">DIVERTISSEMENT</h2></article>
+            <article class="deux" id="js-burger-animation"><h2 id="js-hover-actif">CONTACT</h2></article>
+        </section>
+
+        <!-- Cercle servant a la souris -->
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+
+        <!-- AudioSource -->
+        <audio src="audio/BarSFX.mp3" class="audio" id="js-progressing-bar-sfx"></audio>
+    </main>
+</body>
+</html>
