@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antoine Geslin - PORTFOLIO</title>
+    <link rel="stylesheet" href="styles/burger.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/contenu.css">
+    <script src="scripts/cursor.js" defer></script>
+    <script src="scripts/interaction.js" defer></script>
+    <script src="scripts/burger.js" defer></script>
+    <script src="scripts/contenu.js" defer></script>
+
+</head>
+<body>
+
+    <main>
+        <div class="black-transition center-absolute" id="js-black-transition"></div>
+        <section class="contenu-transition center-absolute" id="js-contenu-transition">
+            <article class="container">
+                <div class="box">
+                    <img src="images/contenu/developpement/benjamin-labrie.jpg" alt="image-qui-change" id="js-image-contenu">
+                    <div class="element">
+                        <div id="js-hover">
+                            <h2 id="js-titre-contenu">TITRE</h2>
+                            <p id="js-texte-contenu">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet harum autem voluptatem doloremque culpa, vitae, animi velit hic ratione cum quae consequuntur vel quisquam delectus voluptatibus ad, facere voluptate ipsum.</p>
+                        </div>
+                        <h3>Compatibilité</h3>
+                        <div class="compatibilite-container">
+                            <img src="images/contenu/pc.png" alt="pc" id="js-compatibilite">
+                            <img src="images/contenu/phone.png" alt="téléphone" id="js-compatibilite">
+                        </div>
+                        <div id="js-hover-actif" class="lien"><a href="" id="js-lien-contenu" target="_blank">Lien</a></div>
+                    </div>
+                </div>
+                <div class="croix" id="js-hover-actif">
+                    <h2 id="js-croix-contenu">X</h2>
+                </div>
+            </article>
+            <article class="black"></article>
+        </section>
+
+        <section class="contenu">
+            <article id="js-contenu-presentation-container">
+                <img src="images/contenu/developpement/benjamin-labrie.jpg" alt="benjamin-labrie" id="js-contenu-presentation-image">
+                <h2 id="js-contenu-presentation-texte">BENJAMIN LABRIE</h2>
+            </article>
+            <article id="js-contenu-presentation-container">
+                <img src="images/contenu/developpement/john-beat.jpg" alt="john-beat" id="js-contenu-presentation-image">
+                <h2 id="js-contenu-presentation-texte">JOHN'S BEAT</h2>
+            </article>
+            <article id="js-contenu-presentation-container">
+                <img src="images/contenu/developpement/ski.jpg" alt="ski" id="js-contenu-presentation-image">
+                <h2 id="js-contenu-presentation-texte">SKI - LA DESCENTE</h2>
+            </article>
+            <article id="js-contenu-presentation-container">
+                <img src="images/contenu/developpement/volley-ball.jpg" alt="volley-ball" id="js-contenu-presentation-image">
+                <h2 id="js-contenu-presentation-texte">VOLLEYBALL</h2>
+            </article>
+
+            <article id="js-contenu-presentation-container">
+                <img src="images/contenu/developpement/milk-and-bone.jpg" alt="milk-and-bone" id="js-contenu-presentation-image">
+                <h2 id="js-contenu-presentation-texte">MILK & BONE</h2>
+            </article>
+        </section>
+
+        <!-- Menu Burger -->
+        <div id="js-hover-actif">
+            <section class="burger-logo" id="js-burger-logo">
+                <article></article>
+                <article></article>
+                <article></article>
+            </section>
+        </div>
+
+        <section class="burger-container" id="js-burger-container">
+            <article class="un" id="js-burger-animation"><h2 id="js-hover-actif">ACCUEIL</h2></article>
+            <article class="deux" id="js-burger-animation"><h2 id="js-hover-actif">NORMAL</h2></article>
+            <article class="un" id="js-burger-animation"><h2 id="js-hover-actif">DIVERTISSEMENT</h2></article>
+            <article class="deux" id="js-burger-animation"><h2 id="js-hover-actif">CONTACT</h2></article>
+        </section>
+
+        <!-- Cercle servant a la souris -->
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+
+        <!-- AudioSource -->
+    </main>
+</body>
+</html>

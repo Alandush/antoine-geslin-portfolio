@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antoine Geslin - PORTFOLIO</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/burger.css">
+
+    <script src="scripts/progressingBar.js" defer></script>
+    <script src="scripts/cursor.js" defer></script>
+    <script src="scripts/interaction.js" defer></script>
+    <script src="scripts/burger.js" defer></script>
+    <script src="scripts/choix.js" defer></script>
+
+</head>
+<body>
+    <div class="black-transition center-absolute" id="js-black-transition"></div>
+    <main>
+        <section class="titre-index">
+            <h1 class="divertissement-font" id="js-hover">Venez visiter mon PORTFOLIO dans le mode qui vous intéresse</h1>
+        </section>
+        <section class="relative index-container">
+            <h2 class="normal-font bouton-actif-choix" id="js-hover-actif">NORMAL</h1>
+        </section>
+        <section class="relative index-container">
+            <article class="progressing-bar" id="js-progressing-bar">
+                <h2 class="progressing-bar-text divertissement-font">DIVERTISSEMENT</h1>
+                <div class="progressing-bar-content center-absolute" id="js-progressing-bar-content"></div>
+            </article> 
+
+            <article class="explanation-divertissement" id="js-hover">
+                <h2 class="divertissement-font">Maintenez le bouton "Divertissement" pour pouvoir accéder au contenu</h2>
+                <h3 id="js-direction-change-index" class="divertissement-font">J'ai compris</h3>
+            </article>
+        </section>
+
+        <!-- Menu Burger -->
+        <div id="js-hover-actif">
+            <section class="burger-logo" id="js-burger-logo">
+                <article></article>
+                <article></article>
+                <article></article>
+            </section>
+        </div>
+
+        <section class="burger-container" id="js-burger-container">
+            <article class="un" id="js-burger-animation"><h2 id="js-hover-actif">ACCUEIL</h2></article>
+            <article class="deux" id="js-burger-animation"><h2 id="js-hover-actif">NORMAL</h2></article>
+            <article class="un" id="js-burger-animation"><h2 id="js-hover-actif">DIVERTISSEMENT</h2></article>
+            <article class="deux" id="js-burger-animation"><h2 id="js-hover-actif">CONTACT</h2></article>
+        </section>
+
+        
+
+
+        <!-- Cercle servant a la souris -->
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+        <div class="circle" id="js-circle"></div>
+
+        <!-- AudioSource -->
+        <audio src="audio/BarSFX.mp3" class="audio" id="js-progressing-bar-sfx"></audio>
+    </main>
+</body>
+</html>
