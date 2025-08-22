@@ -17,6 +17,7 @@ window.addEventListener("pageshow", (e) => {
     if(retourAll) {
         transitionBlack.classList.toggle("top-minus-50");
         retourAll = false;
+        transition = false;
     }
     
 });
@@ -59,6 +60,7 @@ function transitionToChangePage() {
     transitionBlack.classList.remove("top-minus-50");
     transition = true; 
 }
+
 
 
 
