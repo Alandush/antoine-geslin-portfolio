@@ -10,6 +10,7 @@ let resetScaleTwo;
 let victoireClicker = false;
 
 window.addEventListener("pageshow", () => {
+    victoireClicker = false;
     scaleMax = 1.1;
     clickerCercles[0].style.transform = `translate(-50%, -50%) scale(1)`;
 
@@ -65,6 +66,7 @@ clickerCercles[0].addEventListener("transitionend", () => { // Quand l'animation
     }
 
 });
+
 
 
 
