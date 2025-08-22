@@ -14,8 +14,11 @@ animationTransitionPanelSection();
 
 window.addEventListener("pageshow", (e) => {
     if(retourPanel){
-        animationTransitionPanelSection();
         retourPanel = false;
+        programmation = false;
+        audiovisuel = false;
+        design = false;
+        animationTransitionPanelSection();
     }
 });
 
@@ -124,4 +127,5 @@ function animationTransitionPanelSection() {
     }, 250);
 
 }
+
 
