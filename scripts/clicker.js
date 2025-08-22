@@ -30,12 +30,12 @@ clickerCercles.forEach(clickerCercle => {
         resetScaleOne = setTimeout(() => {
             clickerCercles[0].style.transform = "translate(-50%, -50%) scale(1)";
             scaleMax = 1.1;
-        }, 200);
+        }, 1000);
 
         resetScaleTwo = setTimeout(() => {
             clickerCercles[1].style.transform = "translate(-50%, -50%) scale(1)";
             scaleMax = 1.1;
-        }, 200);
+        }, 1000);
 
         if (clickerCercles[0].style.transform == `translate(-50%, -50%) scale(2)`) {
             victoireClicker = true;  
@@ -54,4 +54,5 @@ clickerCercles[0].addEventListener("transitionend", () => { // Quand l'animation
     if (victoireClicker && window.location.pathname.endsWith('clicker.html')) {
         window.location.href = 'developpement.html'; // A changer
     }
+
 });
