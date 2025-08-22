@@ -6,13 +6,17 @@ let programmation = false;
 let audiovisuel = false;
 let design = false;
 let transitionPanel = false;
+let retourPanel = false;
 
 transitionBlack.style.display = "none";
 
 animationTransitionPanelSection();
 
 window.addEventListener("pageshow", (e) => {
-    animationTransitionPanelSection();
+    if(retourPanel){
+        animationTransitionPanelSection();
+        retourPanel = false;
+    }
 });
 
 sectionPanelDomaines.forEach((sectionPanelDomaine, id) => {
@@ -89,18 +93,24 @@ function animationTransitionPanelSection() {
 
                     if (window.location.pathname.endsWith('d-sections.html')) {
                         if (programmation) {
+                            retourPanel = true;
                             window.location.href = 'clicker.html';
                         } else if (audiovisuel) {
+                            retourPanel = true;
                             window.location.href = 'memory-game.html';
                         } else if (design) {
+                            retourPanel = true;
                             window.location.href = 'mouse-game.html';
                         }
                     } else {
                         if (programmation) {
+                            retourPanel = true;
                             window.location.href = 'developpement.html';
                         } else if (audiovisuel) {
+                            retourPanel = true;
                             window.location.href = 'audiovisuel.html';
                         } else if (design) {
+                            retourPanel = true;
                             window.location.href = 'design.html'; 
                         }
                     }
@@ -114,3 +124,4 @@ function animationTransitionPanelSection() {
     }, 250);
 
 }
+
