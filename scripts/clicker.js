@@ -10,6 +10,13 @@ let resetScaleTwo;
 let victoireClicker = false;
 
 clickerCercles.forEach(clickerCercle => {
+
+    clickerCercle.addEventListener("popstate", () => {
+        clickerCercles[0].style.transform = `translate(-50%, -50%) scale(1)`;
+
+        clickerCercles[1].style.transform = `translate(-50%, -50%) scale(1)`;
+        scaleMax = 1.1;
+    })
     clickerCercle.addEventListener("pointerdown", () => {
 
         clearTimeout(resetScaleOne);
@@ -56,6 +63,7 @@ clickerCercles[0].addEventListener("transitionend", () => { // Quand l'animation
     }
 
 });
+
 
 
 
