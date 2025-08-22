@@ -37,7 +37,7 @@ clickerCercles.forEach(clickerCercle => {
             scaleMax = 1.1;
         }, 1000);
 
-        if (clickerCercles[0].style.transform == `translate(-50%, -50%) scale(1.6)`) {
+        if (scaleMax >= 1.6) {
             victoireClicker = true;  
 
             clickerCercles[0].style.transition = "all ease-in 1000ms"
@@ -56,5 +56,6 @@ clickerCercles[0].addEventListener("transitionend", () => { // Quand l'animation
     }
 
 });
+
 
 
