@@ -11,6 +11,10 @@ transitionBlack.style.display = "none";
 
 animationTransitionPanelSection();
 
+window.addEventListener("pageshow", (e) => {
+    animationTransitionPanelSection();
+});
+
 sectionPanelDomaines.forEach((sectionPanelDomaine, id) => {
     sectionPanelDomaine.addEventListener("click", () =>{
         if (id == 0) {
@@ -108,4 +112,5 @@ function animationTransitionPanelSection() {
             }, 250);
         }, 250);
     }, 250);
+
 }
