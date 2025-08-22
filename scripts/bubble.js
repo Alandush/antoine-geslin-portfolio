@@ -22,7 +22,7 @@ function createBubble(){
     createElement.style.left = Math.random() * innerWidth + "px";
 
     // Lorsqu'on clique dessus on applique une animation d'éclatement et on supprime la bulle touché
-    createElement.addEventListener('click', (e) => {
+    createElement.addEventListener('pointerdown', (e) => {
         createElement.style.filter = "blur(100px)";
         bubbleAudio.currentTime = 0;
         bubbleAudio.play();
@@ -45,4 +45,5 @@ function createBubble(){
     setTimeout(() => {
         createElement.remove();
     }, 4000);
+
 }
