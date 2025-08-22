@@ -11,7 +11,9 @@ setTimeout(() => { // Au lancemenent de la page on lance l'animation pour voir l
     transitionBlack.classList.toggle("top-minus-50"); 
 }, 250);
 
-
+transitionBlack.addEventListener("popstate", (e) => { // Quand l'animation se termine et qu'on a cliqué sur un lien qui change de page, on se dirige vers une nouvelle page
+    transitionBlack.classList.toggle("top-minus-50");
+});
 
 transitionBlack.addEventListener("transitionend", (e) => { // Quand l'animation se termine et qu'on a cliqué sur un lien qui change de page, on se dirige vers une nouvelle page
     if (transition && (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) && !logoBurgerBool) {
@@ -41,6 +43,7 @@ function transitionToChangePage() {
     transitionBlack.classList.remove("top-minus-50");
     transition = true; 
 }
+
 
 
 
