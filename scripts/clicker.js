@@ -10,7 +10,7 @@ let resetScaleTwo;
 let victoireClicker = false;
 
 clickerCercles.forEach(clickerCercle => {
-    clickerCercle.addEventListener("click", () => {
+    clickerCercle.addEventListener("pointerdown", () => {
 
         clearTimeout(resetScaleOne);
         clearTimeout(resetScaleTwo);
@@ -56,4 +56,5 @@ clickerCercles[0].addEventListener("transitionend", () => { // Quand l'animation
     }
 
 });
+
 
