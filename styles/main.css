@@ -11,6 +11,10 @@
   --beige-principal: #E5CFBC;
 }
 
+body{
+  overflow: hidden;
+}
+
 /* FONT */
 .divertissement-font {
   font-family: "Montserrat", sans-serif;
