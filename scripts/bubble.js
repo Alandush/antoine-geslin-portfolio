@@ -9,7 +9,8 @@ let countdown = 5;
 setInterval(createBubble, 50);
 
 window.addEventListener("pageshow", (e) => { 
-    coutdown = 5;
+    countdown = 5;
+    bubbleCountdown.textContent = countdown;
 });
 
 // Fonction
@@ -51,4 +52,5 @@ function createBubble(){
     }, 4000);
 
 }
+
 
