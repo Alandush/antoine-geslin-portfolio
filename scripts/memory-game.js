@@ -14,6 +14,16 @@ let etapeQuatre = false;
 
 let timeout = 500;
 
+
+window.addEventListener("pageshow", (e) => { 
+    etapeUn = false;
+    etapeDeux = false;
+    etapeTrois = false;
+    calculerAleatoirement();
+    animerMemoire();
+    gameOn = false;
+});
+
 // Memory
 
 memoires.forEach((memoire, id) => {
@@ -87,4 +97,5 @@ function calculerAleatoirement() {
     resultatDeux = Math.floor(Math.random() * 9);
     resultatTrois = Math.floor(Math.random() * 9);
     resultatQuatre = Math.floor(Math.random() * 9);
+
 }
