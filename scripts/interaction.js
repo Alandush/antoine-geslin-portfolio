@@ -14,7 +14,7 @@ setTimeout(() => { // Au lancemenent de la page on lance l'animation pour voir l
 }, 250);
 
 window.addEventListener("pageshow", (e) => { 
-    console.log(2);
+    console.log(retourAll);
     
     if(retourAll) {
         console.log(1);
@@ -63,6 +63,7 @@ function transitionToChangePage() {
     transitionBlack.classList.remove("top-minus-50");
     transition = true; 
 }
+
 
 
 
