@@ -19,6 +19,10 @@ window.addEventListener("pageshow", (e) => {
         audiovisuel = false;
         design = false;
         animationTransitionPanelSection();
+
+        if(window.innerWidth <= 768) {
+            transitionBlack.classList.toggle("top-minus-50");
+        }
     }
 });
 
@@ -127,5 +131,6 @@ function animationTransitionPanelSection() {
     }, 250);
 
 }
+
 
 
