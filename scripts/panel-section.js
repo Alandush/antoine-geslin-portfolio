@@ -37,18 +37,24 @@ sectionPanelDomaines.forEach((sectionPanelDomaine, id) => {
             setTimeout(() => {
                 if (window.location.pathname.endsWith('d-sections.html')) {
                     if (programmation) {
+                        retourAll = true;
                         window.location.href = 'clicker.html';
                     } else if (audiovisuel) {
+                        retourAll = true;
                         window.location.href = 'memory-game.html';
                     } else if (design) {
+                        retourAll = true;
                         window.location.href = 'mouse-game.html';
                     }
                 } else {
                     if (programmation) {
+                        retourAll = true;
                         window.location.href = 'developpement.html';
                     } else if (audiovisuel) {
+                        retourAll = true;
                         window.location.href = 'audiovisuel.html';
                     } else if (design) {
+                        retourAll = true;
                         window.location.href = 'design.html'; 
                     }
                 }
@@ -133,6 +139,7 @@ function animationTransitionPanelSection() {
     }, 250);
 
 }
+
 
 
 
