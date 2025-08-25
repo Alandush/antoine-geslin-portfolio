@@ -19,10 +19,6 @@ window.addEventListener("pageshow", (e) => {
         audiovisuel = false;
         design = false;
         animationTransitionPanelSection();
-
-        if(window.innerWidth <= 768) {
-            transitionBlack.classList.toggle("top-minus-50");
-        }
     }
 });
 
@@ -101,22 +97,28 @@ function animationTransitionPanelSection() {
                     if (window.location.pathname.endsWith('d-sections.html')) {
                         if (programmation) {
                             retourPanel = true;
+                            retourAll = true;
                             window.location.href = 'clicker.html';
                         } else if (audiovisuel) {
+                            retourAll = true;
                             retourPanel = true;
                             window.location.href = 'memory-game.html';
                         } else if (design) {
+                            retourAll = true;
                             retourPanel = true;
                             window.location.href = 'mouse-game.html';
                         }
                     } else {
                         if (programmation) {
+                            retourAll = true;
                             retourPanel = true;
                             window.location.href = 'developpement.html';
                         } else if (audiovisuel) {
+                            retourAll = true;
                             retourPanel = true;
                             window.location.href = 'audiovisuel.html';
                         } else if (design) {
+                            retourAll = true;
                             retourPanel = true;
                             window.location.href = 'design.html'; 
                         }
@@ -131,6 +133,7 @@ function animationTransitionPanelSection() {
     }, 250);
 
 }
+
 
 
 
