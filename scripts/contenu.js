@@ -29,7 +29,7 @@ let textesDeveloppement = [
 ];
 
 let liensDeveloppement = [
-    "https://projet4.timmatane.ca/2024/tp3/eq4/",
+    "https://dev.timmatane.ca/etudiants/2022/geslina/Benjamin-Labrie/",
     "https://projet3.timmatane.ca/2024/efc/eq3/",
     "https://projet4.timmatane.ca/2024/tp2/eq1/",
     "https://dev.timmatane.ca/etudiants/2022/geslina/iw_efc/index.html",
@@ -156,4 +156,5 @@ contenuTransition.addEventListener("transitionend", () => {
 croixContenu.addEventListener("click", () => {
     transitionVersContenu = false;
     contenuTransition.style.top = "0%";
+
 });
