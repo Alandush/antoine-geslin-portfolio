@@ -47,13 +47,13 @@ transitionBlack.addEventListener("transitionend", (e) => { // Quand l'animation 
         window.location.href = 'index.html';
     }  else if (transition && idBurger == 1) {
         retourAll = true;
-        window.location.href = 'n-sections.html';
+        window.location.href = 'developpement.html';
     }  else if (transition && idBurger == 2) {
         retourAll = true;
-        window.location.href = 'd-sections.html';
+        window.location.href = 'audiovisuel.html';
     }  else if (transition && idBurger == 3) {
         retourAll = true;
-        window.location.href = 'index.html#contact'; 
+        window.location.href = 'design.html'; 
     }
 });
 
@@ -61,6 +61,7 @@ function transitionToChangePage() {
     transitionBlack.classList.remove("top-minus-50");
     transition = true; 
 }
+
 
 
 
