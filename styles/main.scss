@@ -154,7 +154,9 @@ h1, h2, h3, h4, h5, p{
 /* Index */
 
 .titre-index{
-    height: 20vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }
 
 .titre-index h1{
@@ -165,6 +167,7 @@ h1, h2, h3, h4, h5, p{
     display: flex;
     padding: 10px;
     padding-top: 30px;
+    width: 80%;
 }
 
 .index-container{
@@ -510,4 +513,5 @@ h1, h2, h3, h4, h5, p{
             font-size: 1.3rem;
         }
     }
+
 }
