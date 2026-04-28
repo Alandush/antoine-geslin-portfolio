@@ -21,7 +21,7 @@ let titresDeveloppement = [
 ];
 
 let textesDeveloppement = [
-    "Benjamin Labrie est un site web ludique et interactif fait en groupe de trois en Octobre 2024. Ce dernier avait un thème et une restriction, le thème lui était “Complot” et la restriction était le temps. Nous n'avons eu qu'une semaine pour effectuer ce projet. Pour ma part, dans ce projet de groupe, j’ai effectué tout le développement et toutes les intégrations.",
+    "Benjamin Labrie est un site web ludique et interactif fait en groupe de trois en Octobre 2024. Ce dernier avait un thème et une restriction, le thème était “Complot” et la restriction était le temps. Nous n'avons eu qu'une semaine pour effectuer ce projet. Pour ma part, dans ce projet de groupe, j’ai effectué tout le développement et toutes les intégrations.",
     "John’s Beat est un projet ambitieux qu’on s’est lancé avec un groupe de quatre personnes lors du début de l’année 2024. Nous avions pour objectif de créer un jeu de rythme en “pixel art”. Le but du jeu est de découvrir les niveaux, affronter des monstres et tuer les boss. Tout ça dans le rythme de la musique.",
     "La Descente est un projet de groupe qu’on a dû effectuer à trois en Septembre 2024. Nous avions pour consigne de créer une borne interactive d’une station de ski pour vendre des cours et des heures de ski. Ce projet est donc SEULEMENT compatible sur téléphone et non sur ordinateur. Pour ma part, je me suis occupé de toute l’intégration et de tout le développement de ce projet.",
     "Le site de volleyball est un projet que j’ai effectué seul, en 2022. On avait pour objectif de représenter une activité au travers d’un site web et en plus de ça, de programmer un petit jeu en phaser. ",
