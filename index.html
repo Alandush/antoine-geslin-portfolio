@@ -3,80 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antoine Geslin - PORTFOLIO</title>
+    <title>Antoine Geslin – Portfolio</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/burger.css">
     <script src="scripts/cursor.js" defer></script>
     <script src="scripts/interaction.js" defer></script>
-    <script src="scripts/progressingBar.js" defer></script>
     <script src="scripts/home.js" defer></script>
     <script src="scripts/burger.js" defer></script>
+    <script src="scripts/scroll-animations.js" defer></script>
 </head>
 
 <body class="body-home">
-    <div class="black-transition center-absolute" id="js-black-transition"></div>
-    <main class="home-main">
-        <section class="home">
-            <article>
-                <div class="texte" >
-                    <div><h2 id="js-hover">Développeur</h2></div>
-                    <div><h2 id="js-hover">UI / UX</h2></div>
-                    <p id="js-hover">Je m'appelle Antoine Geslin, développeur de site web et de logiciel, diplômé de la technique d'Intégration Multimédia au Cégep de Matane au Québec. Je sais m'adapter rapidement aux nombreux langages et outils. Mes compétences personnelles touchent aussi à l'audiovisuel et au design.</p>
-                </div>
-                <div class="carte">
-                    <div class="ligne">
-                        <div id="js-container-image-home">
-                            <img src="images/html_bw.png" alt="html" id="js-black-and-white-image">
-                            <img src="images/html.png" alt="html" class="icon-couleur" id="js-image-home-transition">
-                        </div>
-                        <div id="js-container-image-home">
-                            <img src="images/css_bw.png" alt="css" id="js-black-and-white-image">
-                            <img src="images/css.png" alt="css" class="icon-couleur" id="js-image-home-transition">
-                        </div>
-                    </div>
-                    <div class="ligne">
-                        <div id="js-container-image-home">
-                            <img src="images/js_bw.png" alt="js" id="js-black-and-white-image">
-                            <img src="images/js.png" alt="js" class="icon-couleur" id="js-image-home-transition">
-                        </div>
-                        <div id="js-container-image-home">
-                            <img src="images/c_bw.png" alt="c-sharp" id="js-black-and-white-image">
-                            <img src="images/c.png" alt="c-sharp" class="icon-couleur" id="js-image-home-transition">
-                        </div>
-                    </div>
-                </div>
-            </article>
+    <div class="black-transition" id="js-black-transition"></div>
 
-            <div class="bouton bouton-script" id="js-hover-actif">
-                <div><h3>Accédez au contenu</h3></div>
+    <main class="home-main">
+
+        <!-- ==================== HERO ==================== -->
+        <section class="hero">
+            <div class="hero-top-bar">
+            </div>
+
+            <div class="hero-body">
+                <div class="hero-name-wrap">
+                    <h1 class="hero-name" id="js-hover">Développeur<br>Web UI/UX</h1>
+                </div>
+                <div class="hero-right">
+                    <h2 class="hero-name-right" id="js-hover">Antoine<br>Geslin</h2>
+                    <p id="js-hover">Diplômé en Intégration Multimédia au Cégep de Matane. Je conçois des interfaces web et développe des logiciels, avec des compétences complémentaires en audiovisuel et en design.</p>
+                </div>
+            </div>
+
+            <div class="hero-foot">
+                <div class="hero-stack" id="js-hover">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>C#</span>
+                    <span>PHP</span>
+                    <span>SQL</span>
+                </div>
+                <button class="cta-btn" id="js-hover-actif">
+                    Explorer mon travail <span aria-hidden="true">↓</span>
+                </button>
             </div>
         </section>
 
-        <section class="contact" id="contact">
-            <h2 id="js-hover">Mes informations</h2>
+        <!-- ==================== TRAVAUX ==================== -->
+        <section class="work-section" id="js-hover-blue">
+            <div class="work-header scroll-reveal">
+                <p class="section-eyebrow">Mes domaines</p>
+                <h2>Ce que je fais</h2>
+            </div>
 
-            <article class="mail">
-                <img src="images/mail.png" alt="mail" id="js-hover">
-                <a href="mailto:geslinantoine0@gmail.com" id="js-hover-actif"><h3>geslinantoine0@gmail.com</h3></a>
-            </article>
-
-            <article class="article-progressing">
-                <div class="progressing-bar" id="js-progressing-bar">
-                    <h2 class="progressing-bar-text divertissement-font">EN SAVOIR PLUS</h1>
-                    <div class="progressing-bar-content" id="js-progressing-bar-content"></div>
+            <div class="work-cards">
+                <div class="work-card scroll-reveal scroll-reveal-delay-1" id="js-card-dev">
+                    <span class="card-num">01</span>
+                    <h2>Développement</h2>
+                    <p>Sites web, applications et jeux interactifs. Code propre et interfaces fluides.</p>
+                    <span class="card-cta">Explorer <span aria-hidden="true">→</span></span>
                 </div>
-
-                <div class="explanation-divertissement" id="js-hover">
-                    <h2 class="divertissement-font">Maintenez le bouton "En savoir plus" pour pouvoir accéder au contenu</h2>
-                    <h3 id="js-direction-change-index" class="divertissement-font">J'ai compris</h3>
+                <div class="work-card work-card--light scroll-reveal scroll-reveal-delay-2" id="js-card-audio">
+                    <span class="card-num">02</span>
+                    <h2>Audiovisuel</h2>
+                    <p>Montage vidéo, motion design et production créative.</p>
+                    <span class="card-cta">Explorer <span aria-hidden="true">→</span></span>
                 </div>
-            </article>
-            
-            <a href="CV.pdf" class="cv" id="js-hover-actif" target="_blank"><h3>CV</h3></a>
+                <div class="work-card scroll-reveal scroll-reveal-delay-3" id="js-card-design">
+                    <span class="card-num">03</span>
+                    <h2>Design</h2>
+                    <p>Identité visuelle, UI/UX et direction artistique.</p>
+                    <span class="card-cta">Explorer <span aria-hidden="true">→</span></span>
+                </div>
+            </div>
         </section>
 
-        <!-- Menu Burger -->
+        <!-- ==================== CONTACT ==================== -->
+        <section class="contact-section" id="contact">
+            <div class="contact-header scroll-reveal">
+                <p class="section-eyebrow">Contact</p>
+                <h2>Travaillons<br>ensemble</h2>
+            </div>
+            <div class="contact-body scroll-reveal scroll-reveal-delay-1">
+                <a href="mailto:geslinantoine0@gmail.com" class="contact-email" id="js-hover-actif">
+                    geslinantoine0@gmail.com
+                </a>
+                <a href="CV.pdf" class="cv-btn" id="js-hover-actif" target="_blank">
+                    Télécharger le CV
+                </a>
+            </div>
+        </section>
+
+        <!-- ==================== MENU BURGER ==================== -->
         <div id="js-hover-actif">
             <section class="burger-logo" id="js-burger-logo">
                 <article></article>
@@ -86,13 +104,13 @@
         </div>
 
         <section class="burger-container" id="js-burger-container">
-            <article class="un" id="js-burger-animation"><h2 id="js-hover-actif">ACCUEIL</h2></article>
+            <article class="un"   id="js-burger-animation"><h2 id="js-hover-actif">ACCUEIL</h2></article>
             <article class="deux" id="js-burger-animation"><h2 id="js-hover-actif">DEVELOPPEMENT</h2></article>
-            <article class="un" id="js-burger-animation"><h2 id="js-hover-actif">AUDIOVISUEL</h2></article>
+            <article class="un"   id="js-burger-animation"><h2 id="js-hover-actif">AUDIOVISUEL</h2></article>
             <article class="deux" id="js-burger-animation"><h2 id="js-hover-actif">DESIGN</h2></article>
         </section>
 
-        <!-- Cercle servant a la souris -->
+        <!-- ==================== CURSEUR ==================== -->
         <div class="circle" id="js-circle"></div>
         <div class="circle" id="js-circle"></div>
         <div class="circle" id="js-circle"></div>
@@ -104,10 +122,6 @@
         <div class="circle" id="js-circle"></div>
         <div class="circle" id="js-circle"></div>
 
-        <!-- AudioSource -->
-        <audio src="audio/BarSFX.mp3" class="audio" id="js-progressing-bar-sfx"></audio>
     </main>
 </body>
-
 </html>
-

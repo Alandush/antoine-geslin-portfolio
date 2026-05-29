@@ -1,164 +1,121 @@
 // Initialisation
 
-const coords = {x:0, y:0}
+const coords  = { x: 0, y: 0 };
 const circles = document.querySelectorAll("#js-circle");
-const hovers = document.querySelectorAll("#js-hover");
-const hoverBlue = document.querySelector("#js-hover-blue");
+const hovers  = document.querySelectorAll("#js-hover");
+const hoverBlue   = document.querySelector("#js-hover-blue");
 const actifHovers = document.querySelectorAll("#js-hover-actif");
 
-let hoverBlueBool = false;
+const COLOR_DARK  = "#333336"; // curseur sur fond clair
+const COLOR_LIGHT = "#FEF9F5"; // curseur sur fond sombre (défaut)
 
-let scrollValeur = 0;
+let hoverBlueBool = false;
 let scrollYValeur = 0;
 
-// Initialisation de la position des cercles
-circles.forEach(function (circle, index) {
+// Position initiale des cercles
+circles.forEach(circle => {
     circle.x = 0;
     circle.y = 0;
 });
 
-// Lors du déplacement du curseur on récupère la valeur de position de la souris
-window.addEventListener("mousemove", function(e){
+// Suivi de la souris
+window.addEventListener("mousemove", (e) => {
     coords.x = e.clientX;
     coords.y = e.pageY;
-    
-    circles.forEach(function (circle, index) {
-        circle.style.opacity = "1";
-    });
+    circles.forEach(c => { c.style.opacity = "1"; });
 });
 
-window.addEventListener("scroll", function(e){
-    // Obtenez la valeur de défilement
-    let scrollY = window.scrollY; // Valeur de défilement
-    scrollY -= scrollYValeur;
-    scrollYValeur = window.scrollY;
-
-    coords.y += scrollY;
+// Compensation du scroll
+window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    coords.y += scrollY - scrollYValeur;
+    scrollYValeur = scrollY;
 });
 
-// Animation de déplacement du curseur
+// Animation fluide du curseur
 function animateCircles() {
+    let x = coords.x;
+    let y = coords.y;
 
-let x = coords.x;
-let y = coords.y;
+    circles.forEach((circle, index) => {
+        circle.style.left  = x - 12 + "px";
+        circle.style.top   = y - 12 + "px";
+        circle.style.scale = String((circles.length - index) / circles.length);
 
-circles.forEach(function (circle, index) {
-    
-    circle.style.left = x - 12 + "px";
-    circle.style.top = y - 12 + "px";
-    
-    circle.style.scale = (circles.length - index) / circles.length;
-    
-    circle.x = x;
-    circle.y = y;
+        circle.x = x;
+        circle.y = y;
 
-    const nextCircle = circles[index + 1] || circles[0];
-    x += (nextCircle.x - x) * 0.25;
-    y += (nextCircle.y - y) * 0.25;
-});
+        const next = circles[index + 1] || circles[0];
+        x += (next.x - x) * 0.25;
+        y += (next.y - y) * 0.25;
+    });
 
-requestAnimationFrame(animateCircles);
+    requestAnimationFrame(animateCircles);
 }
 
 animateCircles();
 
-
-window.addEventListener("click", function(e){ // Lorsqu'on clique une legere animation de scale se lance
-    circles.forEach(function (circle, index) {
-        if (circle.style.transform < "scale(5)") {
-            circle.style.transform = "scale(3)";
-            setTimeout(() => {circle.style.transform = "scale(1)";}, 80);
-        }
+// Impulsion au clic
+window.addEventListener("click", () => {
+    circles.forEach(circle => {
+        circle.style.transform = "scale(3)";
+        setTimeout(() => { circle.style.transform = "scale(1)"; }, 80);
     });
 });
 
-// Hover
+// ---------- Hover standard ----------
 
-hovers.forEach(hover => { // Lorsqu'on met la souris sur les objets contenant l'id hover, on pourra voir dans ses couleurs opposés ce contenu
-    hover.addEventListener("mouseenter", function(e) {
-        if (hoverBlueBool) {
-            circles[0].style.backgroundColor = "#E5CFBC"
-        }
-        circles.forEach(function (circle, index) {
+hovers.forEach(hover => {
+    hover.addEventListener("mouseenter", () => {
+        circles.forEach((circle, index) => {
             circle.style.transform = "scale(5)";
-            for (let index = 0; index < circles.length-1; index++) {
-                circles[index + 1].style.display = "none";
-            }
+            if (index > 0) circle.style.display = "none";
         });
-        circles[0].classList.toggle("circle-blend");
-
+        circles[0].classList.add("circle-blend");
     });
-});
 
-hovers.forEach(hover => { // On revient a l'etat d'origine quand on quitte le hover
-    hover.addEventListener("mouseleave", function(e) {
-        circles.forEach(function (circle, index) {
+    hover.addEventListener("mouseleave", () => {
+        circles.forEach((circle, index) => {
             circle.style.transform = "scale(1)";
-            for (let index = 0; index < circles.length-1; index++) {
-                if (window.innerWidth > 768) {
-                    circles[index + 1].style.display = "block";
-                }
-            }
+            if (index > 0 && window.innerWidth > 768) circle.style.display = "block";
         });
-        circles[0].classList.toggle("circle-blend");
-
+        circles[0].classList.remove("circle-blend");
     });
 });
 
-// Hover actif (quand l'élément est cliquable)
+// ---------- Hover actif (cliquable) ----------
 
-actifHovers.forEach(actifHover => { // Lorsqu'on met la souris sur les objets contenant l'id hover, on pourra voir dans ses couleurs opposés ce contenu
-    actifHover.addEventListener("mouseenter", function(e) {
-        if (hoverBlueBool) {
-            circles[0].style.backgroundColor = "#E5CFBC"
-        }
-        circles.forEach(function (circle, index) {
+actifHovers.forEach(actifHover => {
+    actifHover.addEventListener("mouseenter", () => {
+        circles.forEach((circle, index) => {
             circle.style.transform = "scale(5)";
-
-            for (let index = 0; index < circles.length-1; index++) {
-                circles[index + 1].style.display = "none";
-            }
+            if (index > 0) circle.style.display = "none";
         });
-        circles[0].classList.toggle("circle-blend");
-        setTimeout(() => {
-            circles[0].classList.add("animation-hover");
-        }, 100);
-
+        circles[0].classList.add("circle-blend");
+        setTimeout(() => { circles[0].classList.add("animation-hover"); }, 100);
     });
-});
 
-actifHovers.forEach(actifHover => { // On revient a l'etat d'origine quand on quitte le hover
-    actifHover.addEventListener("mouseleave", function(e) {
-        circles.forEach(function (circle, index) {
+    actifHover.addEventListener("mouseleave", () => {
+        circles.forEach((circle, index) => {
             circle.style.transform = "scale(1)";
-
-            for (let index = 0; index < circles.length-1; index++) {
-                if (window.innerWidth > 768) {
-                    circles[index + 1].style.display = "block";
-                }
-            }
+            if (index > 0 && window.innerWidth > 768) circle.style.display = "block";
         });
-        circles[0].classList.toggle("circle-blend");
-        setTimeout(() => {
-            circles[0].classList.remove("animation-hover");
-        }, 100);
-
+        circles[0].classList.remove("circle-blend");
+        setTimeout(() => { circles[0].classList.remove("animation-hover"); }, 100);
     });
 });
 
-// Hover Blue pour section (lorsque la couleur de fond est beige)
+// ---------- Section sombre : curseur passe en clair ----------
 
-hoverBlue.addEventListener("mouseenter", function(e) {
-    hoverBlueBool = true;
-    circles.forEach(function (circle, index) {
-        circle.style.backgroundColor = "#0d1822"
+// Sur la section travaux (fond clair) le curseur passe au sombre
+if (hoverBlue) {
+    hoverBlue.addEventListener("mouseenter", () => {
+        hoverBlueBool = true;
+        circles.forEach(c => { c.style.backgroundColor = COLOR_DARK; });
     });
-});
 
-hoverBlue.addEventListener("mouseleave", function(e) {
-    hoverBlueBool = false;
-
-    circles.forEach(function (circle, index) {
-        circle.style.backgroundColor = "#E5CFBC"
+    hoverBlue.addEventListener("mouseleave", () => {
+        hoverBlueBool = false;
+        circles.forEach(c => { c.style.backgroundColor = COLOR_LIGHT; });
     });
-});
+}

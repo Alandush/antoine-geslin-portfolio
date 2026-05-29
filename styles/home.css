@@ -1,11 +1,10 @@
 @charset "UTF-8";
-/* ----------------------------------------------------------- HOME ----------------------------------------------------------- */
+
+/* ======================================================
+   HOME
+   ====================================================== */
+
 .body-home {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
   overflow: auto;
   overflow-x: hidden;
   height: auto;
@@ -13,219 +12,417 @@
 }
 
 .home-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
   overflow: auto;
   overflow-x: hidden;
   height: auto;
   width: 100dvw;
 }
-.home-main .home {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-  text-align: left;
-  padding: 20px;
-  margin: 20px;
-  font-size: 2rem;
-  width: 60%;
+
+/* ======================================================
+   HERO  (fond sombre)
+   ====================================================== */
+
+.hero {
   height: 100dvh;
-}
-.home-main .home article {
-  display: flex;
-  justify-content: space-around;
-}
-.home-main .home article .texte {
-  width: 50%;
-}
-.home-main .home article .texte h2 {
-  font-size: 3.5rem;
-  letter-spacing: 6px;
-  padding-top: 10px;
-  font-family: "Varela Round", sans-serif;
-}
-.home-main .home article .texte p {
-  font-size: 1.1rem;
-  text-align: left;
-  padding-top: 50px;
-  letter-spacing: 1px;
-}
-.home-main .home article .carte {
-  width: 40%;
-}
-.home-main .home article .carte .ligne {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 10px;
-}
-.home-main .home article .carte .ligne div {
-  height: 150px;
-  width: 150px;
-  padding: 10px;
-  border: solid 0.1px rgba(245, 245, 245, 0.3);
-  background-color: rgba(245, 245, 245, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 600px;
+  background-color: var(--sombre);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 40px 80px;
+  position: relative;
   overflow: hidden;
-  position: relative;
-}
-.home-main .home article .carte .ligne div img {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  transform: translate(-50%, -50%) scale(0.8);
-  top: 50%;
-  left: 50%;
-  transition: all ease-in 250ms;
-}
-.home-main .home article .carte .ligne div .icon-couleur {
-  left: -50%;
-}
-.home-main .home .bouton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  width: auto;
-  border-radius: 25px;
-  margin: 10px;
-  padding: 20px;
-  background-color: var(--blanc-nuance);
-  list-style: none;
-  text-decoration: none;
-}
-.home-main .home .bouton div {
-  flex: 1;
-}
-.home-main .home .bouton div h3 {
-  color: var(--bleu-principal);
-}
-.home-main .contact {
-  height: 75dvh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  margin: 50px;
-}
-.home-main .contact article {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  position: relative;
-}
-.home-main .contact article img {
-  width: 10%;
-  height: auto;
-}
-.home-main .contact article a {
-  text-decoration: none;
-}
-.home-main .contact .article-progressing {
-  width: 100dvw;
-  height: 30%;
-}
-.home-main .contact .article-progressing .progressing-bar {
-  height: 25%;
-  width: 20%;
-  justify-content: center;
-  position: relative;
-  display: flex;
-  align-items: center;
-  top: unset;
-}
-.home-main .contact .article-progressing .progressing-bar .progressing-bar-content {
-  position: absolute;
-  transform: translate(-50%, -50%) scaleX(2);
-  top: 50%;
-  left: 0%;
-}
-.home-main .contact .article-progressing .explanation-divertissement {
-  left: 25%;
-  width: 100%;
-}
-.home-main .contact .cv {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  width: auto;
-  border-radius: 25px;
-  margin: 10px;
-  padding: 20px;
-  width: 150px;
-  background-color: var(--blanc-nuance);
-  color: var(--bleu-principal);
-  list-style: none;
-  text-decoration: none;
-}
-.home-main .contact .cv h3 {
-  color: var(--bleu-principal);
-  font-size: 1.5rem;
 }
 
-/* Pour les écrans de tablette */
+/* Barre supérieure */
+.hero-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(254, 249, 245, 0.12);
+}
+
+.hero-tag {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--clair);
+  opacity: 0.4;
+}
+
+/* Corps hero */
+.hero-body {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 60px;
+}
+
+.hero-name-wrap {
+  flex: 0 0 auto;
+  width: 55%;
+}
+
+.hero-name {
+  font-size: clamp(2.8rem, 6vw, 6.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--clair);
+}
+
+.hero-right {
+  max-width: 360px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Nom côté droit — plus petit que le titre, italique */
+.hero-name-right {
+  font-size: clamp(1.8rem, 3.5vw, 3.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--clair);
+  opacity: 0.85;
+}
+
+.hero-right > p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--clair);
+  opacity: 0.7;
+}
+
+/* Barre inférieure */
+.hero-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  border-top: 1px solid rgba(254, 249, 245, 0.12);
+}
+
+.hero-stack {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.hero-stack span {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--clair);
+  opacity: 0.65;
+}
+
+/* Bouton CTA (clair sur fond sombre) */
+.cta-btn {
+  background: var(--clair);
+  color: var(--sombre);
+  border: none;
+  padding: 15px 32px;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+              box-shadow 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(51, 51, 54, 0.06);
+  opacity: 0;
+  border-radius: 100px;
+  transition: opacity 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+}
+
+.cta-btn:hover::before {
+  opacity: 1;
+}
+
+.cta-btn:active {
+  transform: scale(0.97) translateY(0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition-duration: 0.08s;
+}
+
+/* ======================================================
+   WORK SECTION  (fond clair, cartes sombres)
+   ====================================================== */
+
+.work-section {
+  background-color: var(--clair);
+  min-height: 100dvh;
+  padding: 100px 80px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.work-header {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.section-eyebrow {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--sombre);
+  opacity: 0.7;
+}
+
+.work-header h2 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  color: var(--sombre);
+  line-height: 1.1;
+}
+
+/* Grille des cartes */
+.work-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.work-card {
+  background-color: var(--sombre);
+  border: 1px solid rgba(51, 51, 54, 0.08);
+  padding: 56px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.45s ease,
+              transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1),
+              box-shadow 0.45s ease;
+}
+
+/* Ligne animée en bas de la carte */
+.work-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--clair);
+  transition: width 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.work-card:hover::before { width: 100%; }
+
+.work-card:hover {
+  background-color: rgba(51, 51, 54, 0.85);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(51, 51, 54, 0.2);
+}
+
+.work-card:active {
+  transform: translateY(-2px) scale(0.99);
+  transition-duration: 0.1s;
+}
+
+/* Numéros */
+.card-num {
+  font-size: 0.68rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--clair);
+  opacity: 0.25;
+}
+
+/* Titres dans les cartes */
+.work-card h2 {
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  color: var(--clair);
+  line-height: 1.05;
+  margin: 0;
+}
+
+/* Descriptions */
+.work-card p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--clair);
+  opacity: 0.5;
+  flex: 1;
+}
+
+/* Lien "Explorer →" */
+.card-cta {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--clair);
+  opacity: 0.55;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  transition: gap 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+              opacity 0.35s ease;
+}
+
+.work-card:hover .card-cta {
+  gap: 16px;
+  opacity: 1;
+}
+
+/* ======================================================
+   CONTACT  (fond sombre)
+   ====================================================== */
+
+.contact-section {
+  background-color: var(--sombre);
+  min-height: 55dvh;
+  padding: 120px 80px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.contact-header {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-header .section-eyebrow {
+  color: var(--clair);
+  opacity: 0.7;
+}
+
+.contact-header h2 {
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  color: var(--clair);
+  line-height: 1.05;
+}
+
+.contact-body {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.contact-email {
+  font-size: clamp(0.95rem, 2vw, 1.35rem);
+  color: var(--clair);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(254, 249, 245, 0.25);
+  padding-bottom: 3px;
+  transition: border-color 0.3s ease, opacity 0.3s ease;
+}
+
+.contact-email:hover {
+  border-color: var(--clair);
+  opacity: 0.65;
+}
+
+.cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--clair);
+  color: var(--sombre);
+  padding: 14px 28px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+              box-shadow 0.4s ease;
+}
+
+.cv-btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
+}
+
+.cv-btn:active {
+  transform: scale(0.97);
+  transition-duration: 0.08s;
+}
+
+/* ======================================================
+   RESPONSIVE — TABLETTE
+   ====================================================== */
+
 @media (min-width: 768px) and (max-width: 1024px) {
-  .progressing-bar-text {
-    font-size: 1.1rem;
+  .hero,
+  .work-section,
+  .contact-section {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .work-cards {
+    grid-template-columns: 1fr;
+    gap: 2px;
   }
 }
-/* Pour les écrans de téléphone */
+
+/* ======================================================
+   RESPONSIVE — TÉLÉPHONE
+   ====================================================== */
+
 @media (max-width: 767px) {
-  .home-main .home {
-    width: 100dvw;
+  .hero {
+    padding: 28px 24px;
     height: auto;
   }
-  .home-main .home article {
-    display: flex;
+
+  .hero-stack{
+    gap: 12px;
+  }
+
+  .hero-body {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    gap: 36px;
   }
-  .home-main .home article .texte {
-    width: 80%;
-    text-align: center;
-    padding-top: 50px;
+
+  .hero-right {
+    max-width: 100%;
   }
-  .home-main .home article .texte h2 {
-    font-size: 2rem;
+
+  .hero-foot {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
   }
-  .home-main .home article .carte {
-    width: 60%;
+
+  .work-section,
+  .contact-section {
+    padding: 80px 24px;
   }
-  .home-main .home article .carte .ligne div {
-    margin: 10px;
-    width: 35%;
+
+  .work-cards {
+    grid-template-columns: 1fr;
   }
-  .home-main .home .bouton {
-    text-align: center;
-    font-size: 1.5rem;
+
+  .contact-body {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  .home-main .contact {
-    justify-content: start;
-    height: auto;
-  }
-  .home-main .contact h2 {
-    padding: 5px;
-  }
-  .home-main .contact .mail {
-    padding: 50px;
-  }
-  .home-main .contact .article-progressing {
-    height: 0;
-    opacity: 0;
-    overflow: hidden;
-  }
-  .home-main .contact .article-progressing * {
-    display: none;
-  }
-  .home-main .contact .article-progressing .progressing-bar {
-    width: 80%;
-  }
-}/*# sourceMappingURL=home.css.map */
+}

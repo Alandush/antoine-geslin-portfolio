@@ -2,76 +2,48 @@
 
 const transitionBlack = document.querySelector("#js-black-transition");
 
+let transition   = false;
+let retourAll    = false;
+let destinationUrl = null;
 
-let transition = false;
-
-let retourAll = false;
-
-// Transition
-
-setTimeout(() => { // Au lancemenent de la page on lance l'animation pour voir le contenu
-    transitionBlack.classList.toggle("top-minus-50"); 
+// Révèle la page au chargement
+setTimeout(() => {
+    transitionBlack.classList.toggle("top-minus-50");
 }, 250);
 
-window.addEventListener("pageshow", (e) => { 
-    
-    if(retourAll) {
+window.addEventListener("pageshow", () => {
+    if (retourAll) {
         transitionBlack.classList.toggle("top-minus-50");
-        retourAll = false;
+        retourAll  = false;
         transition = false;
     }
-    
 });
 
-transitionBlack.addEventListener("transitionend", (e) => { // Quand l'animation se termine et qu'on a cliqué sur un lien qui change de page, on se dirige vers une nouvelle page
-    if (transition && (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) && !logoBurgerBool) {
+// Navigue vers la destination après la fin de la transition
+transitionBlack.addEventListener("transitionend", () => {
+    if (!transition) return;
+
+    if (destinationUrl && !logoBurgerBool) {
         retourAll = true;
-        window.location.href = 'choix.html';
-    } else if (transition && window.location.pathname.endsWith('choix.html') && normal == true && !logoBurgerBool) {
-        retourAll = true;
-        window.location.href = 'n-sections.html';
-    } else if (transition && window.location.pathname.endsWith('choix.html') && !logoBurgerBool) {
-        retourAll = true;
-        window.location.href = 'bubble.html';
-    } else if (transition && window.location.pathname.endsWith('bubble.html') && !logoBurgerBool) {
-        retourAll = true;
-        window.location.href = 'd-sections.html';
-    } else if (transition && window.location.pathname.endsWith('mouse-game.html') && !logoBurgerBool) {
-        retourAll = true;
-        window.location.href = 'design.html'; 
-    } else if (transition && window.location.pathname.endsWith('memory-game.html') && !logoBurgerBool) {
-        retourAll = true;
-        window.location.href = 'audiovisuel.html'; 
-    }  else if (transition && idBurger == 0) {
+        const url  = destinationUrl;
+        destinationUrl = null;
+        window.location.href = url;
+    } else if (idBurger === 0) {
         retourAll = true;
         window.location.href = 'index.html';
-    }  else if (transition && idBurger == 1) {
+    } else if (idBurger === 1) {
         retourAll = true;
         window.location.href = 'developpement.html';
-    }  else if (transition && idBurger == 2) {
+    } else if (idBurger === 2) {
         retourAll = true;
         window.location.href = 'audiovisuel.html';
-    }  else if (transition && idBurger == 3) {
+    } else if (idBurger === 3) {
         retourAll = true;
-        window.location.href = 'design.html'; 
+        window.location.href = 'design.html';
     }
 });
 
 function transitionToChangePage() {
     transitionBlack.classList.remove("top-minus-50");
-    transition = true; 
+    transition = true;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

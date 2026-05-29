@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* Panel section */
+
 .panel-section {
   height: 100dvh;
   width: 100dvw;
@@ -19,15 +19,20 @@
   text-transform: uppercase;
   font-size: 2rem;
   padding: 25px;
+  color: var(--clair);
 }
 
 .panel-video {
-  background-color: var(--beige-principal);
+  background-color: var(--clair);
 }
 
 .panel-video h1 {
-  color: var(--bleu-principal);
+  color: var(--sombre);
   font-weight: 500;
+}
+
+.panel-video {
+  background-color: var(--clair);
 }
 
 .black-transition-container {
@@ -37,48 +42,39 @@
   position: fixed;
   z-index: 10;
 }
+
 .black-transition-container .unique {
   height: 100%;
   width: 33.33%;
 }
+
 .black-transition-container .unique .black-transition-section {
   height: 100%;
   width: 33.33%;
-  background-color: var(--noir-nuance);
+  background-color: var(--sombre);
   position: absolute;
   z-index: 100;
   transition: all 1s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
-.black-transition-container .unique .un {
-  top: -100%;
-}
-.black-transition-container .unique .deux {
-  top: 100%;
-}
-.black-transition-container .unique .trois {
-  width: 33.33%;
-  top: -100%;
-}
-.black-transition-container .troisieme {
-  width: 33.33%;
+
+.black-transition-container .unique .un   { top: -100%; }
+.black-transition-container .unique .deux { top: 100%;  }
+.black-transition-container .unique .trois { width: 33.33%; top: -100%; }
+.black-transition-container .troisieme    { width: 33.33%; }
+
+/* TABLETTE */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .panel-section h1 { font-size: 1.5rem; }
 }
 
-/* Pour les écrans de tablette */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .panel-section h1 {
-    font-size: 1.5rem;
-  }
-}
-/* Pour les écrans de téléphone */
+/* TÉLÉPHONE */
 @media (max-width: 767px) {
   .panel-section {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
   }
-  .panel-section h1 {
-    font-size: 1.5rem;
-  }
+  .panel-section h1 { font-size: 1.5rem; }
   .panel-section article {
     display: flex;
     align-items: center;
@@ -86,4 +82,4 @@
     width: 100%;
     height: 33.33%;
   }
-}/*# sourceMappingURL=panel-section.css.map */
+}
